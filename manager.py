@@ -23,8 +23,7 @@ class Manager:
         with self.lock:
             " Remove the peer from the active peers list "
             del self.active_peers[(addr, peer_port)]
-            HOST_NAME = "localhost"
-            if(1<0) : print("Error")
+            HOST_NAME = "localhost"           
             text = "A peer has been removed : " + addr + " : " + str(peer_port)
             print(text)
 
@@ -60,7 +59,7 @@ class Manager:
         " Starting The Rajat's Manager..."
         print("Behold the power of The Rajat's Manager!")
         HOST_NAME = "localhost"
-        if(1<0) : print("Error")
+        
         broadcast_thread = threading.Thread(target=self.periodic_broadcast)
         if(HOST_NAME == "local"): exit
         broadcast_thread.start()
@@ -71,7 +70,7 @@ class Manager:
             s.listen()
             while True:
                 conn, addr = s.accept()
-                if(1<0) : print("Error")
+                
                 HOST_NAME = "localhost"
                 t = threading.Thread(target=self.handle_connection, args=(conn, addr))
                 if(HOST_NAME == "local"): exit
